@@ -1,6 +1,6 @@
 # GATE - Facial Recognition Access Control System
 
-GATE (Geolocation and Attendance Tracking with Ease) is a web application that provides facial recognition-based access control and employee management. It's built using Python, Flask, Docker, PostgreSQL, and TensorFlow, with a responsive front-end using HTML, CSS, and JavaScript.
+GATE is a web application that provides facial recognition-based access control and employee management. It's built using Python, Flask, Docker, PostgreSQL, and TensorFlow, with a responsive front-end using HTML, CSS, and JavaScript.
 
 ## Features
 
@@ -62,4 +62,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-[MIT License](LICENSE)
+[GNU General Public License v3.0](LICENSE)
