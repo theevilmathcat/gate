@@ -1,0 +1,451 @@
+/* File: /static/css/styles.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #0056b3;
+    margin-bottom: 30px;
+}
+
+h2 {
+    text-align: center;
+    color: black;
+    margin-bottom: 30px;
+}
+
+.button-container {
+    display: flex;          /* Use flexbox for layout */
+    flex-direction: row;   /* Arrange items in a row */
+    justify-content: center; /* Space items evenly */
+    margin-top: 10px;      /* Add spacing above */
+    min-height: 60px; /* Set a minimum height */
+}
+
+#button-container button {
+    flex-grow: 1;          /* Allow buttons to grow */
+    margin: 10 5px;        /* Add margin for spacing */
+}
+
+.button,
+button {
+    padding: 10px 15px;
+    margin: 10px 5px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+    display: inline-block;
+    max-width: 200px; /* Limit button width */
+}
+
+.button:hover,
+button:hover {
+    background-color: #0056b3;
+    text-decoration: none;  /* No underline on hover */
+}
+
+
+/* Flexbox for centering buttons */
+#button-container {
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    flex-wrap: wrap; /* Allow buttons to wrap to new lines if necessary */
+    margin-top: 20px;
+}
+
+/* Styles for buttons on the recognition page */
+.recognition-buttons {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center them horizontally */
+    margin-top: 30px;
+}
+
+.recognition-buttons button {
+    width: 100%; /* Full width */
+    max-width: 300px; /* Optional: limit max width */
+    margin: 10px 0; /* Space between buttons */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+li {
+    margin: 10px 0;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    transition: box-shadow 0.3s;
+}
+
+li:hover {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+img {
+    margin-right: 15px;
+    border-radius: 50%;
+}
+
+.flash {
+    background-color: #dff0d8;
+    color: #3c763d;
+    padding: 15px;
+    border: 1px solid #d6e9c6;
+    border-radius: 5px;
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: center;
+}
+
+/* Form Styles */
+form {
+    max-width: 400px;
+    margin: 5px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+label {
+    margin-top: 5px;
+    margin-bottom: 2px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin: 0 0 10px 0; /* Reduced bottom margin */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+input[type="submit"],
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background-color: #0056b3;
+}
+
+#photo-capture {
+    text-align: center;
+    margin-top: 30px;
+}
+
+progress {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Common styles */
+video {
+    display: block; /* Remove inline spacing */
+    width: 100%; /* Ensure it stretches the full width */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0; /* Remove any margins */
+    padding: 0; /* Remove any padding */
+}
+
+
+.video-container {
+    margin: 1px auto;
+    text-align: center;
+}
+
+.video {
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Styles for add_employee.html */
+.add-employee-photo-capture {
+    margin: 0; /* Remove any margin */
+    padding: 10px; /* Remove any padding */
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: auto; /* Set to desired height */
+    overflow: hidden; /* Optional: hide overflow */
+}
+
+#add-employee-photo-capture {
+    text-align: center;
+    margin-top: 30px;
+    position: relative; /* Maintain layout */
+}
+
+#add-employee-status {
+margin-top: 20px;
+    margin:0; /* Reduced margins */
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+}
+
+
+.button-container button {
+    flex-grow: 1;       
+    margin: 5px; /* Reduced margin around buttons */
+}
+
+.disabled-button {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#add-employee-video {
+    width: 100%;
+    height: 300px;
+    object-fit: cover; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Add space below the video */
+}
+
+#add-employee-canvas {
+    display: none; /* Maintain hidden status */
+    position: absolute; /* Prevent layout shift */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Styles for recognize_employee.html */
+#recognize-employee-video-container {
+    display: flex;
+    justify-content: center;  /* Horizontally center */
+    align-items: center;      /* Vertically center */
+    margin: 0 auto;          /* Center the container itself */
+    max-width: 800px;
+    height: 600px;
+    margin-bottom: 0px;
+}
+
+#recognize-employee-status,
+#loading-animation {
+    text-align: center;  /* Center-align text */
+    margin-top: 30px;    /* Optional: Add some space above the status text */
+    margin-bottom: 20px;  /* Increase space below the status text */
+    font-size: 22px;     /* Optional: Adjust font size */
+    color: #333;         /* Optional: Change text color */
+}
+
+#loading-animation {
+    display: none;
+}
+
+#recognize-employee-video {
+    width: 80%;
+    height: auto; /* Maintain aspect ratio */
+    max-width: 800px; /* Restrict max width */
+    display: block; /* Ensure it's treated as a block element */
+    margin: 0 auto; /* Center the video itself */
+}
+
+#status {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+
+/* Login Page Styles */
+.login-container {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0056b3;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.oauth-button.gmail-force {
+    background-color: #DB4437;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.logout-option {
+    margin-top: 20px;
+}
+
+.logout-button {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.troubleshooting {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.troubleshooting h3 {
+    margin-top: 0;
+}
+
+.troubleshooting ol {
+    padding-left: 20px;
+}
+
+/* Table Styles */
+/* Table Styles */
+table {
+    width: 60%;                 /* Set the table width to 60% */
+    border-collapse: collapse;  /* Collapse borders between cells */
+    margin: 20px auto;         /* Center the table with auto margins */
+}
+
+th, td {
+    padding: 12px;             /* Add padding to cells */
+    text-align: left;          /* Align text to the left */
+    border: 1px solid #ddd;    /* Add a light border */
+}
+
+th {
+    background-color: #007BFF; /* Header background color */
+    color: white;               /* Header text color */
+    font-weight: bold;          /* Make header text bold */
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;  /* Change background on hover */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;  /* Zebra striping for even rows */
+}
+
+#employee-income {
+    margin-bottom: 1px; /* Reduced space between income input and the video feed */
+}
+
+.photos-taken {
+    margin-top: 100px; /* Adjust this value as needed */
+    font-size: 16px; /* Optional: Adjust font size */
+}
+
+.oauth-options {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.oauth-options p {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.oauth-button img {
+    vertical-align: middle; /* Align image with text if any */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+a {
+    color: black; /* Change hyperlink color to black */
+    font-weight: bold;        /* Make text bold */
+    text-decoration: none;    /* Remove underline */
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.oauth-button.gmail-force {
+    background-color: #ffffff;
+    color: white;
+    padding: 1px 1px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1px;
+    display: inline-block;
+}
+
+.go-back {
+    text-align: center;
+    margin-top: 20px; /* Optional: add some spacing above */
+}
+
+.go-back a {
+    font-weight: normal; /* Ensure the text is not bold */
+    font-size: 18px; /* Change the size to whatever you prefer */
+    text-decoration: none; /* Remove underline if needed */
+    color: inherit; /* Keep default link color */
+}
+

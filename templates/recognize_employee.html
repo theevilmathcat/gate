@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G.A.T.E - Recognize Employee</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/recognize_employee.js') }}" defer></script>
+</head>
+
+<body>
+    <h1>G.A.T.E</h1>
+    <h2>Recognition System</h2>
+    <div style="text-align: center;">
+        <button id="start-camera">Start Recognition</button>
+        <button id="stop-recognition" style="display:none;">Stop Recognition</button>
+        <button id="go-back" onclick="window.location.href='/'">Go Back to Main Page</button>
+    </div>
+
+    <!-- Display model training status -->
+    <div id="model-status" style="text-align: center; margin: 20px;">
+        <p>Model Status: {% if model_trained %}Trained{% else %}No Model Trained{% endif %}</p>
+    </div>
+
+    <!-- recognize_employee.html -->
+    <div id="recognize-employee-video-container" style="display: none;">
+        <video id="recognize-employee-video" autoplay></video>
+        <canvas id="recognize-employee-canvas" style="display: none;"></canvas>
+        <div id="recognize-employee-status"></div>
+        <div id="loading-animation" style="display: none;">Loading<span id="loading-dots"></span></div>
+    </div>
+</body>
+
+</html>
+

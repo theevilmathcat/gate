@@ -1,0 +1,17 @@
+FROM ubuntu:latest
+
+# Install PostgreSQL client and cron
+RUN apt-get update && apt-get install -y cron postgresql-client
+
+# Copy the backup script into the container
+COPY backup.sh /usr/local/bin/backup.sh
+RUN chmod +x /usr/local/bin/backup.sh  # Make the script executable
+
+# Create a directory for backups
+RUN mkdir -p /backup
+
+# Add cron job for daily backups every minute and show the log.
+RUN echo "* * * * * /usr/local/bin/backup.sh >> /backup/backup.log 2>&1" >> /etc/crontab
+
+# Start the cron service
+CMD ["cron", "-f"]

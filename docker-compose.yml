@@ -1,0 +1,56 @@
+services:
+  db:
+    image: postgres:16
+    container_name: postgres_db
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: flask_app
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    environment:
+      FLASK_ENV: ${FLASK_ENV}
+      DATABASE_URL: ${DATABASE_URL}
+      SECRET_KEY: ${SECRET_KEY}
+      BASE_DIR: /app/model_inputs/employee_photos
+      MODEL_PATH: /app/model_outputs/model.keras
+      LABEL_DICT_PATH: /app/model_outputs/label_dict.json
+    volumes:
+      - .:/app
+      - employee_photos:/app/model_inputs/employee_photos
+      - model_outputs:/app/model_outputs
+      - C:\Users\diogo\Desktop\ML\1-Tools\0-Python scripts\gate_project\app\training_classes:/app/training_classes
+      - C:\Users\diogo\Desktop\ML\1-Tools\0-Python scripts\gate_project\app\logs:/app/logs
+
+  backup:
+    build:
+      context: .
+      dockerfile: Dockerfile.backup  # Ensure this points to your backup Dockerfile
+    volumes:
+      - C:\Users\diogo\Desktop\ML\1-Tools\0-Python scripts\gate_project\backup:/backup  # Change to your backup directory path
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}  # Pass the password for PostgreSQL
+    depends_on:
+      - db
+
+    networks:
+      - default
+
+volumes:
+  postgres_data:
+  employee_photos:
+  model_outputs:
